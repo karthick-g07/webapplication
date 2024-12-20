@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>  
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'logincss.css' %}">
+</head>
+<body >
+    <div id="l1">
+    <h2>Login</h2>
+   
+    <form method="post" class="l2">
+        {% if messages %}
+        {% for message in messages %}
+        <p id="errortext">
+          
+                   {{message}}
+                </p>
+        {% endfor %}
+    {% endif %}
+    
+    
+        {% csrf_token %}
+        <div id="boxdiv">
+         
+            <input style="outline: none;" type="text" name="email" required placeholder="Email" id="box">
+        </div>
+        <div id="boxdiv">
+         
+            <input  style="outline: none;" type="password" name="password" required placeholder="password" id="box">
+        </div>
+        <div id="boxdiv2">
+        <button  style="outline: none;" type="submit" id="btn">Login</button>
+        </div>
+        <div class="forpass">
+           <a style="padding: 0; margin: 0;" href="{% url 'forgetpage' %}">Forget Password?</a>
+            </div>
+      <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    </form>
+    </div>
+</body>
+</html>

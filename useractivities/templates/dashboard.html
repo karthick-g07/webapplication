@@ -1,0 +1,22 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+  <link rel="stylesheet" href="{%static 'dashboard.css'%}">
+</head>
+<body >
+    <div class="l1">
+        <div class="card2">
+    <h2>Welcome, {{ userdata.name }}!</h2>
+    <p>DateofBirth:{{userdata.dob}}</p>
+    <p>Department:{{userdata.department}}</p>
+    <p>Cgpa:{{userdata.cgpa}}</p>
+    <p>Gender:{{userdata.gender}}</p>
+    <p>Register No:{{userdata.registerno}}</p>
+    <p>You have successfully logged in.</p>
+    <a href="{% url 'login' %}">Logout</a>
+    </div>
+    </div>
+</body>
+</html>
